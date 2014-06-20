@@ -20,7 +20,7 @@
 </head>
 <body ng-app="WorldCupApp" ng-controller="matchesController">
 
-<table>
+<table class="world-cup-matches">
     <thead>
     <tr>
         <th colspan="4">
@@ -30,12 +30,20 @@
     </thead>
     <tbody>
     <tr ng-repeat="match in matches">
-        <td>{{$index + 1}}</td>
-        <td>
+        <td class="index">{{$index + 1}}</td>
+        <td class="group">
+            {{ match.c_Phase_en }}
+        </td>
+        <td class="home-team">
+            <img class="home-team-flag" src="" />
+            {{ match.c_HomeTeam_en }}
+        </td>
+        <td class="away-team">
+            <img class="away-team-flag" src="" />
             {{ match.c_AwayTeam_en }}
         </td>
-        <td>
-            {{ match.c_HomeTeam_en }}
+        <td class="score">
+            {{ match.c_Score_en }}
         </td>
     </tr>
     </tbody>
