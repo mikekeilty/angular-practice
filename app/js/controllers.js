@@ -2,30 +2,15 @@
 
 /* Controllers */
 
-angular.module('F1FeederApp.controllers', [])
-  .controller('driversController', function($scope) {
-    $scope.driversList = [
-        {
-            Driver: {
-                givenName: 'Sebastian',
-                familyName: 'Vettel'
-            },
-            points: 322,
-            nationality: 'German',
-            Constructors: [
-                { name: "Red Bull" }
-            ]
-        },
-        {
-            Driver: {
-                givenName: 'Fernando',
-                familyName: 'Alonzo'
-            },
-            points: 207,
-            nationality: 'Spanish',
-            Constructors: [
-                { name: "Ferrari" }
-            ]
-        }
-    ];
-  });
+angular.module('WorldCupApp.controllers', [])
+  .controller('matchesController', ['$scope', '$http', function($scope, $http) {
+        $scope.nameFilter = null;
+        var result = $http({
+            method: 'GET',
+            url: 'data_src/data.json'
+        });
+
+        result.success(function(result) {
+           $scope.matches = result.data.group;
+        });
+  }]);

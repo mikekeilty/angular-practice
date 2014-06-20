@@ -1,5 +1,5 @@
 // Declare app level module which depends on filters, and services
-var myModule = angular.module('F1FeederApp', [
+var myModule = angular.module('WorldCupApp', [
   'ngRoute',
-  'F1FeederApp.controllers'
+  'WorldCupApp.controllers'
 ]);

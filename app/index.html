@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>F1 Feeder App</title>
+    <title>World Cup App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
@@ -18,27 +18,24 @@
     <link rel="stylesheet" href="css/app.css"/>
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body ng-app="F1FeederApp" ng-controller="driversController">
+<body ng-app="WorldCupApp" ng-controller="matchesController">
+
 <table>
     <thead>
     <tr>
         <th colspan="4">
-            Drivers Championship Standings
+            World Cup Matches
         </th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="driver in driversList">
+    <tr ng-repeat="match in matches">
         <td>{{$index + 1}}</td>
         <td>
-            <img src="img/flags/{{ driver.Driver.nationality }}.png" />
-            {{ driver.Driver.givenName }}&nbsp;{{ driver.Driver.familyName }}
+            {{ match.c_AwayTeam_en }}
         </td>
         <td>
-            {{ driver.Construction[0].name }}
-        </td>
-        <td>
-            {{driver.points}}
+            {{ match.c_HomeTeam_en }}
         </td>
     </tr>
     </tbody>
