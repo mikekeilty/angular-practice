@@ -3,3 +3,23 @@
 table.world-cup-matches td {
     padding: 2px 5px 2px 5px;
 }
+
+table.world-cup-matches {
+    margin-top: 100px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    width: 200px;
+    margin-top: 10px;
+}
+
+@font-face
+{
+    font-family: glyphicons;
+    src: url(bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff);
+}

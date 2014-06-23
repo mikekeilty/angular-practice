@@ -16,20 +16,28 @@
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
     <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body ng-app="WorldCupApp" ng-controller="matchesController">
-
-<table class="world-cup-matches">
+<div class="container">
+    <nav class="navbar-fixed-top navbar navbar-inverse" role="navigation">
+        <div class="search-wrapper">
+            <input class="game-search" type="text" ng-model="matchFilter" placeholder="Search..." />
+        </div>
+    </nav>
+</div>
+<table class="world-cup-matches table-bordered table-responsive table">
     <thead>
     <tr>
-        <th colspan="4">
+        <th colspan="5">
             World Cup Matches
         </th>
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="match in matches">
+    <tr ng-repeat="match in matches | filter: matchFilter">
         <td class="index">{{$index + 1}}</td>
         <td class="group">
             {{ match.c_Phase_en }}
